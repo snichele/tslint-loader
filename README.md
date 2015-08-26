@@ -39,6 +39,26 @@ module.exports = {
 	}
 }
 ```
+
+## Tslint Configuration file
+
+By default, tslint configuration file (tslint.json) is searched from the module path up to the filesystem root recursively.
+
+If you want to specify a specific location for your file, use a loader query like this :
+
+```
+	(...)
+	preLoaders: [
+		{
+			test: /\.ts$/,
+			loader: "tslint?configFilePath=configs/tslint.json"
+		}
+	]
+	(...)
+```
+
+**configFilePath** must be a relative path from the location where you run webpack.
+
 ## Installation
 
 ``` shell
